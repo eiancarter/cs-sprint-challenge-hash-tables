@@ -4,13 +4,12 @@ def get_indices_of_item_weights(weights, length, limit):
     """
 
     rack = dict()
-
+    result = []
     for weight in weights:
-        Answer = limit - weight
-        if Answer not in rack:
-            rack[Answer] = 1
-        else:
-            return (weights.index(Answer), weights.index(weight))
+        answer = limit - weight
+        rack[answer] = weights.index(weight)
+        result.append(rack[answer])
+        return result
     return None
 
 
